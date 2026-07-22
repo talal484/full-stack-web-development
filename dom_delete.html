@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement("li")
+        li.innerHTML = langName
+        document.querySelector(".language").appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("C++")
+
+
+    function addOptiLanguage(langName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptiLanguage("java")
+
+
+    // Edit
+    const second_language = document.querySelector("li:nth-child(2)")
+    console.log(second_language)
+    // second_language.innerHTML = "dart"
+    const newLi = document.createElement("li")
+    newLi.textContent = "kotlin"
+    second_language.replaceWith(newLi)
+
+
+    const firstLanguage = document.querySelector("li:first-child")
+    firstLanguage.outerHTML = "<li>Typescript</li>"
+
+    // remove
+    const removeElement = document.querySelector("li:last-child")
+    removeElement.remove()
+</script>
+</html>
